@@ -1,6 +1,8 @@
 # unix-timestamp
 
-Tiny library to create and manipulate Unix timestamps in Javascript. (A Unix timestamp is the number of seconds elapsed since Unix epoch time, i.e. January 1 1970 00:00 UTC).
+Tiny library to create and manipulate Unix timestamps in Javascript. (A Unix timestamp is the number of seconds elapsed since Unix epoch time, i.e. January 1 1970 00:00 UTC.)
+
+[![NPM version](https://badge.fury.io/js/unix-timestamp.png)](http://badge.fury.io/js/unix-timestamp)
 
 ## Usage
 

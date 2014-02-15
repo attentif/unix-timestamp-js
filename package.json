@@ -16,7 +16,6 @@
     "url": "http://github.com/sgoumaz"
   },
   "files": [
-    "README.md",
     "lib"
   ],
   "main": "./lib/timestamp",
