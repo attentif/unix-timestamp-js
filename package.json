@@ -1,0 +1,35 @@
+{
+  "name": "unix-timestamp",
+  "version": "0.1.0",
+  "description": "Tiny library to create and manipulate Unix timestamps",
+  "keywords": [
+    "timestamp",
+    "unix",
+    "time"
+  ],
+  "bugs": {
+    "url": "http://github.com/pryv/unix-timestamp/issues"
+  },
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Simon Goumaz",
+    "url": "http://github.com/sgoumaz"
+  },
+  "files": [
+    "README.md",
+    "lib"
+  ],
+  "main": "./lib/timestamp",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/pryv/unix-timestamp-js.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "latest",
+    "should": "latest"
+  }
+}
