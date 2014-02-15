@@ -5,9 +5,9 @@ var timestamp = require('../lib/timestamp'),
     Constants = require('../lib/Constants'),
     errorMargin = 0.01;
 
-describe('timestamp', function() {
+describe('timestamp', function () {
 
-  describe('.now()', function() {
+  describe('.now()', function () {
 
     it('must return a timestamp for the current time', function() {
       timestamp.now().should.be.approximately(Date.now() / 1000, errorMargin);
@@ -21,7 +21,7 @@ describe('timestamp', function() {
 
   });
 
-  describe('.add()', function() {
+  describe('.add()', function () {
 
     var time = timestamp.now(),
         testDeltaString = '- 1y 2M 3w 5d 8h 13m 21s 34ms',
@@ -68,7 +68,15 @@ describe('timestamp', function() {
 
   });
 
-  describe('.fromDate()', function() {
+  describe('.duration()', function () {
+
+    it('must work as sugar for .add() with a time of zero', function () {
+      timestamp.duration('1h').should.be.approximately(timestamp.add(0, '1h'), errorMargin);
+    });
+
+  });
+
+  describe('.fromDate()', function () {
 
     it('must return a timestamp for the given Date object', function () {
       timestamp.fromDate(new Date()).should.be.approximately(timestamp.now(), errorMargin);

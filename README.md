@@ -11,6 +11,7 @@ Install with `npm install unix-timestamp`, then:
 - `timestamp.now([delta])` gives the current time, optionally applying a delta (see below)
 - `timestamp.fromDate(dateOrString)` gives the time from a Javascript Date object or an ISO 8601 date string
 - `timestamp.add(time, delta)` applies a delta to the given time
+- `timestamp.duration(delta)` gives the delta timestamp for the given delta string
 
 A delta can be either a number (unit: seconds) or a string with format `[+|-] [{years}y] [{months}M] [{weeks}w] [{days}d] [{hours}h] [{minutes}m] [{seconds}s] [{milliseconds}ms]` (for example `-30s`).
 
