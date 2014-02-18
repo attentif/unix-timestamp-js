@@ -1,3 +1,6 @@
+/*global describe, it */
+/*jshint -W068*/
+
 require('mocha');
 require('should');
 
@@ -9,11 +12,11 @@ describe('timestamp', function () {
 
   describe('.now()', function () {
 
-    it('must return a timestamp for the current time', function() {
+    it('must return a timestamp for the current time', function () {
       timestamp.now().should.be.approximately(Date.now() / 1000, errorMargin);
     });
 
-    it('must apply the given delta string when specified', function() {
+    it('must apply the given delta string when specified', function () {
       timestamp.now('-30s').should.be.approximately(timestamp.now() - 30, errorMargin);
     });
 
@@ -36,7 +39,7 @@ describe('timestamp', function () {
         21 * Constants.Second +
         34 * Constants.Millisecond);
 
-    it('must add the given delta string to the given time', function() {
+    it('must add the given delta string to the given time', function () {
       timestamp.add(time, testDeltaString).should.be.approximately(time + testDeltaNumber,
           errorMargin);
     });
@@ -55,15 +58,15 @@ describe('timestamp', function () {
     });
 
     it('must throw an error when passing a time that is not a number', function () {
-      (function () { timestamp.add(new Date(), 1); }).should.throw(/number/);
+      (function () { timestamp.add(new Date(), 1); }).should.throwError(/number/);
     });
 
     it('must throw an error when passing a delta that is neither string nor number', function () {
-      (function () { timestamp.add(time, new Date()); }).should.throw(/string.+number/);
+      (function () { timestamp.add(time, new Date()); }).should.throwError(/string.+number/);
     });
 
     it('must throw an error when passing an invalid delta string', function () {
-      (function () { timestamp.add(time, 'one week'); }).should.throw(/format/);
+      (function () { timestamp.add(time, 'one week'); }).should.throwError(/format/);
     });
 
   });
@@ -88,7 +91,7 @@ describe('timestamp', function () {
     });
 
     it('must throw an error when passing something else', function () {
-      (function () { timestamp.fromDate(1); }).should.throw(/string.+date/);
+      (function () { timestamp.fromDate(1); }).should.throwError(/string.+date/);
     });
 
   });
