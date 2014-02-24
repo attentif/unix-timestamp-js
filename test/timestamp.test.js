@@ -5,7 +5,6 @@ require('mocha');
 require('should');
 
 var timestamp = require('../lib/timestamp'),
-    Constants = require('../lib/Constants'),
     errorMargin = 0.01;
 
 describe('timestamp', function () {
@@ -30,14 +29,14 @@ describe('timestamp', function () {
         testDeltaString = '- 1y 2M 3w 5d 8h 13m 21s 34ms',
         testDeltaStringWithSpaces = ' - 1 y  2 M  3 w  5 d  8 h  13 m  21 s  34 ms ';
     var testDeltaNumber = - 1 *
-        (1 * Constants.Year +
-         2 * Constants.Month +
-         3 * Constants.Week +
-         5 * Constants.Day +
-         8 * Constants.Hour +
-        13 * Constants.Minute +
-        21 * Constants.Second +
-        34 * Constants.Millisecond);
+        (1 * timestamp.Year +
+         2 * timestamp.Month +
+         3 * timestamp.Week +
+         5 * timestamp.Day +
+         8 * timestamp.Hour +
+        13 * timestamp.Minute +
+        21 * timestamp.Second +
+        34 * timestamp.Millisecond);
 
     it('must add the given delta string to the given time', function () {
       timestamp.add(time, testDeltaString).should.be.approximately(time + testDeltaNumber,
@@ -52,7 +51,7 @@ describe('timestamp', function () {
     it('must add the given delta number to the given time', function () {
       var date = new Date(),
           time = timestamp.fromDate(date),
-          delta = - 1 * Constants.Minute;
+          delta = - 1 * timestamp.Minute;
       date.setMinutes(date.getMinutes() - 1);
       timestamp.add(time, delta).should.be.approximately(timestamp.fromDate(date), errorMargin);
     });
