@@ -96,4 +96,18 @@ describe('timestamp', function () {
 
   });
 
+  describe('.toDate()', function () {
+
+    it('must return a Date for the given timestamp', function () {
+      var date = new Date(),
+          time = timestamp.fromDate(date);
+      timestamp.toDate(time).should.eql(date);
+    });
+
+    it('must throw an error when passing something else', function () {
+      (function () { timestamp.toDate(new Date()); }).should.throwError(/number/);
+    });
+
+  });
+
 });
