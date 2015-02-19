@@ -16,6 +16,8 @@ Install with `npm install unix-timestamp`, then:
 
 A delta can be either a number (unit: seconds) or a string with format `[+|-] [{years}y] [{months}M] [{weeks}w] [{days}d] [{hours}h] [{minutes}m] [{seconds}s] [{milliseconds}ms]` (for example `-30s`). The actual values (in seconds) used for each unit of time are accessible in properties `Millisecond`, `Second`, `Minute`, `Hour`, `Day`, `Week`, `Month` (i.e. mean gregorian month) and `Year`.
 
+By default timestamps include decimals (fractions of a second). You can set the lib to round all returned timestamps to the second with `timestamp.round = true`.
+
 
 ## Tests
 

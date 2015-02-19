@@ -19,6 +19,13 @@ describe('timestamp', function () {
       timestamp.now('-30s').should.be.approximately(timestamp.now() - 30, errorMargin);
     });
 
+    it('must round the timestamp to the second when configured so', function () {
+      withRounding(function () {
+        var time = timestamp.now();
+        time.should.equal(Math.round(time));
+      });
+    });
+
     // see .add() tests below for other delta cases
 
   });
@@ -56,6 +63,13 @@ describe('timestamp', function () {
       timestamp.add(time, delta).should.be.approximately(timestamp.fromDate(date), errorMargin);
     });
 
+    it('must round the timestamp to the second when configured so', function () {
+      withRounding(function () {
+        var time = timestamp.add(123.456, 0);
+        time.should.equal(Math.round(time));
+      });
+    });
+
     it('must throw an error when passing a time that is not a number', function () {
       (function () { timestamp.add(new Date(), 1); }).should.throwError(/number/);
     });
@@ -89,6 +103,13 @@ describe('timestamp', function () {
       timestamp.fromDate('2014-02-15T00:00:00Z').should.be.approximately(expected, errorMargin);
     });
 
+    it('must round the timestamp to the second when configured so', function () {
+      withRounding(function () {
+        var time = timestamp.fromDate('2014-02-15T00:00:00.5Z');
+        time.should.equal(Math.round(time));
+      });
+    });
+
     it('must throw an error when passing something else', function () {
       (function () { timestamp.fromDate(1); }).should.throwError(/string.+date/);
     });
@@ -110,3 +131,12 @@ describe('timestamp', function () {
   });
 
 });
+
+function withRounding(fn) {
+  timestamp.round = true;
+  try {
+    fn();
+  } finally {
+    timestamp.round = false;
+  }
+}
