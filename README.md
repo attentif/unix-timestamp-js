@@ -23,6 +23,10 @@ By default timestamps include decimals (fractions of a second). You can set the 
 
 Install dev dependencies with `npm install`, then `npm test`.
 
+## Support and warranty
+
+Pryv provides this software for educational and demonstration purposes with no support or warranty.
+
 ## License
 
 [Revised BSD license](https://github.com/pryv/documents/blob/master/license-bsd-revised.md)
