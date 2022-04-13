@@ -19,13 +19,16 @@ A delta can be either a number (unit: seconds) or a string with format `[+|-] [{
 By default timestamps include decimals (fractions of a second). You can set the lib to round all returned timestamps to the second with `timestamp.round = true`.
 
 
-## Tests
+## Contributing
 
-Install dev dependencies with `npm install`, then `npm test`.
+`npm test` runs the [tests](./test) with [Mocha](https://mochajs.org/).
 
-## Support and warranty
+`npm run test-cover` runs the tests and outputs coverage stats with [Istanbul](https://istanbul.js.org/).
 
-Pryv provides this software for educational and demonstration purposes with no support or warranty.
+`npm run license` updates license information with [source-licenser](https://github.com/pryv/source-licenser).
+
+The code follows the [Semi-Standard](https://github.com/standard/semistandard) style.
+
 
 ## License
 
