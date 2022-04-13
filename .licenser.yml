@@ -1,0 +1,80 @@
+files:
+  "**/*.js":
+    # Header comment with default license text
+    header:
+      startBlock: |
+        /**
+         * @license
+      linePrefix: " * "
+      endBlock: " */"
+      license: |
+        [{SPDX}]({LICENSE_URL})
+
+  package.json:
+    # Forced & default JSON key values for package.json
+    json:
+      force:
+        author: "{AUTHOR_NAME} <{AUTHOR_EMAIL}> ({AUTHOR_WEB})"
+        license: "{SPDX}"
+      sortPackage: true
+
+    # License file in the same directory as package.json
+    siblingLicenseFile:
+      name: "LICENSE"
+
+  README.md:
+    # Footer section with custom license text (link to license file)
+    footer:
+      startBlock: "\n\n## License\n\n"
+      linePrefix: ""
+      endBlock: ""
+      license: "[{SPDX}]({LICENSE_URL})"
+
+ignore:
+- .git
+- .vscode
+- node_modules
+
+# Default license text
+license: |
+  Copyright (c) {YEARS} {AUTHOR_NAME} {AUTHOR_WEB}
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+
+  3. Neither the name of the copyright holder nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  SPDX-License-Identifier: {SPDX}
+
+# Values here will be replaced in `license` and `json` settings
+substitutions:
+  # `{YEARS}` will evaluate to `end` if `start` == `end`, and to `start–end` otherwise
+  YEARS:
+    start: 2014
+    # `{CURRENT_YEAR}` will evaluate to… 🥁… the current year
+    end: CURRENT_YEAR
+  AUTHOR_NAME: "Pryv S.A"
+  AUTHOR_EMAIL: info@pryv.com
+  AUTHOR_WEB: https://pryv.com
+  LICENSE_URL: https://github.com/pryv/unix-timestamp-js/blob/master/LICENSE
+  SPDX: BSD-3-Clause

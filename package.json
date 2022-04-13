@@ -10,25 +10,23 @@
   "bugs": {
     "url": "http://github.com/pryv/unix-timestamp/issues"
   },
-  "license": "BSD-3-Clause",
-  "author": {
-    "name": "Simon Goumaz",
-    "url": "http://github.com/sgoumaz"
-  },
-  "files": [
-    "lib"
-  ],
-  "main": "./lib/timestamp",
   "repository": {
     "type": "git",
     "url": "http://github.com/pryv/unix-timestamp-js.git"
   },
+  "license": "BSD-3-Clause",
+  "author": "Pryv S.A <info@pryv.com> (https://pryv.com)",
+  "main": "./lib/timestamp",
+  "files": [
+    "lib"
+  ],
   "scripts": {
+    "license": "source-licenser -c .licenser.yml .",
     "test": "./node_modules/.bin/mocha"
   },
-  "dependencies": {},
   "devDependencies": {
-    "mocha": "^2.1.0",
-    "should": "^5.0.0"
+    "mocha": "^9.2.2",
+    "should": "^13.2.3",
+    "source-licenser": "^2.0.3"
   }
 }

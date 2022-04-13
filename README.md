@@ -29,4 +29,4 @@ Pryv provides this software for educational and demonstration purposes with no s
 
 ## License
 
-[Revised BSD license](https://github.com/pryv/documents/blob/master/license-bsd-revised.md)
+[BSD-3-Clause](https://github.com/pryv/unix-timestamp-js/blob/master/LICENSE)

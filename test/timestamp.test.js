@@ -1,3 +1,7 @@
+/**
+ * @license
+ * [BSD-3-Clause](https://github.com/pryv/unix-timestamp-js/blob/master/LICENSE)
+ */
 /*global describe, it */
 /*jshint -W068*/
 
