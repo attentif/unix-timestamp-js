@@ -11,6 +11,18 @@ const timestamp = require('../lib/timestamp');
 const errorMargin = 0.01;
 
 describe('timestamp', function () {
+  describe('.round', function () {
+    it('must be false by default, and tell whether rounding is enabled', function () {
+      timestamp.round.should.eql(false);
+      timestamp.round = true;
+      timestamp.round.should.eql(true);
+      timestamp.round = false;
+      timestamp.round.should.eql(false);
+    });
+
+    // whether rounding actually works is tested for each function below
+  });
+
   describe('.now()', function () {
     it('must return a timestamp for the current time', function () {
       timestamp.now().should.be.approximately(Date.now() / 1000, errorMargin);
