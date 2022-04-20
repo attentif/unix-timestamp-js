@@ -7,15 +7,28 @@ Tiny library to create and manipulate Unix timestamps in Javascript. (A Unix tim
 
 ## Usage
 
-Install with `npm install unix-timestamp`, then:
+```sh
+npm install unix-timestamp
+```
 
-- `timestamp.now([delta])` gives the current time, optionally applying a delta (see below)
-- `timestamp.fromDate(dateOrString)` gives the time from a Javascript Date object or an ISO 8601 date string
-- `timestamp.toDate(time)` correspondingly gives the date from a timestamp
-- `timestamp.add(time, delta)` applies a delta to the given time
-- `timestamp.duration(delta)` gives the delta timestamp for the given delta string
+Then:
+```javascript
+const timestamp = require('unix-timestamp');
+```
 
-A delta can be either a number (unit: seconds) or a string with format `[+|-] [{years}y] [{months}M] [{weeks}w] [{days}d] [{hours}h] [{minutes}m] [{seconds}s] [{milliseconds}ms]` (for example `-30s`). The actual values (in seconds) used for each unit of time are accessible in properties `Millisecond`, `Second`, `Minute`, `Hour`, `Day`, `Week`, `Month` (i.e. mean Gregorian month) and `Year`.
+### Methods
+
+- `.now([offset])` gives the current time, optionally applying an offset (see below)
+- `.fromDate(dateOrString)` gives the time from a Javascript Date object or an ISO 8601 date string
+- `.toDate(time)` correspondingly gives the date from a timestamp
+- `.add(time, offset)` applies an offset to the given time
+- `.duration(offset)` gives the offset timestamp for the given offset string
+
+An offset can be either a number (unit: seconds) or a string with format `[+|-] [{years}y] [{months}M] [{weeks}w] [{days}d] [{hours}h] [{minutes}m] [{seconds}s] [{milliseconds}ms]` (for example `-30s`).
+
+The actual values (in seconds) used for each unit of time in an offset string are exposed by properties `.Millisecond`, `.Second`, `.Minute`, `.Hour`, `.Day`, `.Week`, `.Month` (i.e. mean Gregorian month) and `.Year`.
+
+### About rounding
 
 By default timestamps include decimals (fractions of a second). You can set the lib to round all returned timestamps to the second with `timestamp.round = true`.
 

@@ -28,7 +28,7 @@ describe('timestamp', function () {
       timestamp.now().should.be.approximately(Date.now() / 1000, errorMargin);
     });
 
-    it('must apply the given delta string when specified', function () {
+    it('must apply the given offset string when specified', function () {
       timestamp.now('-30s').should.be.approximately(timestamp.now() - 30, errorMargin);
     });
 
@@ -39,14 +39,14 @@ describe('timestamp', function () {
       });
     });
 
-    // see .add() tests below for other delta cases
+    // see .add() tests below for other offset cases
   });
 
   describe('.add()', function () {
     const time = timestamp.now();
-    const testDeltaString = '- 1y 2M 3w 5d 8h 13m 21s 34ms';
-    const testDeltaStringWithSpaces = ' - 1 y  2 M  3 w  5 d  8 h  13 m  21 s  34 ms ';
-    const testDeltaNumber = -1 *
+    const testOffsetString = '- 1y 2M 3w 5d 8h 13m 21s 34ms';
+    const testOffsetStringWithSpaces = ' - 1 y  2 M  3 w  5 d  8 h  13 m  21 s  34 ms ';
+    const testOffsetNumber = -1 *
       (1 * timestamp.Year +
        2 * timestamp.Month +
        3 * timestamp.Week +
@@ -56,22 +56,22 @@ describe('timestamp', function () {
        21 * timestamp.Second +
        34 * timestamp.Millisecond);
 
-    it('must add the given delta string to the given time', function () {
-      timestamp.add(time, testDeltaString).should.be.approximately(time + testDeltaNumber,
+    it('must add the given offset string to the given time', function () {
+      timestamp.add(time, testOffsetString).should.be.approximately(time + testOffsetNumber,
         errorMargin);
     });
 
-    it('must support extra spaces in the delta string', function () {
-      timestamp.add(time, testDeltaStringWithSpaces).should.be.approximately(time + testDeltaNumber,
+    it('must support extra spaces in the offset string', function () {
+      timestamp.add(time, testOffsetStringWithSpaces).should.be.approximately(time + testOffsetNumber,
         errorMargin);
     });
 
-    it('must add the given delta number to the given time', function () {
+    it('must add the given offset number to the given time', function () {
       const date = new Date();
       const time = timestamp.fromDate(date);
-      const delta = -1 * timestamp.Minute;
+      const offset = -1 * timestamp.Minute;
       date.setMinutes(date.getMinutes() - 1);
-      timestamp.add(time, delta).should.be.approximately(timestamp.fromDate(date), errorMargin);
+      timestamp.add(time, offset).should.be.approximately(timestamp.fromDate(date), errorMargin);
     });
 
     it('must round the timestamp to the second when configured so', function () {
@@ -85,11 +85,11 @@ describe('timestamp', function () {
       (function () { timestamp.add(new Date(), 1); }).should.throwError(/number/);
     });
 
-    it('must throw an error when passing a delta that is neither string nor number', function () {
+    it('must throw an error when passing an offset that is neither string nor number', function () {
       (function () { timestamp.add(time, new Date()); }).should.throwError(/string.+number/);
     });
 
-    it('must throw an error when passing an invalid delta string', function () {
+    it('must throw an error when passing an invalid offset string', function () {
       (function () { timestamp.add(time, 'one week'); }).should.throwError(/format/);
     });
   });
