@@ -1,6 +1,6 @@
 {
   "name": "unix-timestamp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny library to create and manipulate Unix timestamps",
   "keywords": [
     "timestamp",
