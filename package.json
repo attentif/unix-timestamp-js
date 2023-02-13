@@ -1,6 +1,6 @@
 {
   "name": "unix-timestamp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tiny library to create and manipulate Unix timestamps",
   "keywords": [
     "timestamp",
@@ -26,10 +26,10 @@
     "test-cover": "nyc npm run test"
   },
   "devDependencies": {
-    "mocha": "^9.2.2",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "semistandard": "^16.0.1",
     "should": "^13.2.3",
-    "source-licenser": "^2.0.4"
+    "source-licenser": "^2.0.5"
   }
 }
