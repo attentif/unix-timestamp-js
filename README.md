@@ -1,6 +1,6 @@
 # unix-timestamp
 
-[![CI](https://github.com/pryv/unix-timestamp-js/workflows/CI/badge.svg)](https://github.com/pryv/unix-timestamp-js/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/unix-timestamp)](https://www.npmjs.com/package/unix-timestamp)
+[![CI](https://github.com/attentif/unix-timestamp-js/workflows/CI/badge.svg)](https://github.com/attentif/unix-timestamp-js/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/unix-timestamp)](https://www.npmjs.com/package/unix-timestamp)
 
 Tiny library to create and manipulate Unix timestamps in Javascript. (A Unix timestamp is the number of seconds elapsed since Unix epoch time, i.e. January 1 1970 00:00 UTC.)
 
@@ -46,4 +46,4 @@ The code follows the [Semi-Standard](https://github.com/standard/semistandard) s
 
 ## License
 
-[BSD-3-Clause](https://github.com/pryv/unix-timestamp-js/blob/master/LICENSE)
+[BSD-3-Clause](https://github.com/attentif/unix-timestamp-js/blob/master/LICENSE)

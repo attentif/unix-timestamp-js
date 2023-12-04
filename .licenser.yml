@@ -73,8 +73,8 @@ substitutions:
     start: 2014
     # `{CURRENT_YEAR}` will evaluate to… 🥁… the current year
     end: CURRENT_YEAR
-  AUTHOR_NAME: "Pryv S.A"
-  AUTHOR_EMAIL: info@pryv.com
-  AUTHOR_WEB: https://pryv.com
-  LICENSE_URL: https://github.com/pryv/unix-timestamp-js/blob/master/LICENSE
+  AUTHOR_NAME: "Simon Goumaz"
+  AUTHOR_EMAIL: simon@attentif.ch
+  AUTHOR_WEB: https://attentif.ch
+  LICENSE_URL: https://github.com/attentif/unix-timestamp-js/blob/master/LICENSE
   SPDX: BSD-3-Clause

@@ -1,6 +1,6 @@
 {
   "name": "unix-timestamp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Tiny library to create and manipulate Unix timestamps",
   "keywords": [
     "timestamp",
@@ -8,14 +8,14 @@
     "time"
   ],
   "bugs": {
-    "url": "http://github.com/pryv/unix-timestamp/issues"
+    "url": "http://github.com/attentif/unix-timestamp/issues"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/pryv/unix-timestamp-js.git"
+    "url": "http://github.com/attentif/unix-timestamp-js.git"
   },
   "license": "BSD-3-Clause",
-  "author": "Pryv S.A <info@pryv.com> (https://pryv.com)",
+  "author": "Simon Goumaz <simon@attentif.ch> (https://attentif.ch)",
   "main": "./lib/timestamp",
   "files": [
     "lib"
