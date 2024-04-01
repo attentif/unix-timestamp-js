@@ -26,10 +26,10 @@
     "test-cover": "nyc npm run test"
   },
   "devDependencies": {
-    "mocha": "^10.2.0",
+    "mocha": "^10.4.0",
     "nyc": "^15.1.0",
-    "semistandard": "^16.0.1",
+    "semistandard": "^17.0.0",
     "should": "^13.2.3",
-    "source-licenser": "^2.0.5"
+    "source-licenser": "^2.0.6"
   }
 }
