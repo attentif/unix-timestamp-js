@@ -17,6 +17,7 @@
   "license": "BSD-3-Clause",
   "author": "Simon Goumaz <simon@attentif.ch> (https://attentif.ch)",
   "main": "./lib/timestamp",
+  "types": "./lib/timestamp.d.ts",
   "files": [
     "lib"
   ],
